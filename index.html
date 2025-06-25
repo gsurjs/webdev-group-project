@@ -3,248 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Happy 4th of July!</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sky Container -->
-    <div class="sky">
-        <!-- Stars -->
-        <div class="stars">
-            <div class="star" style="top: 10%; left: 15%;">⭐</div>
-            <div class="star" style="top: 15%; left: 25%; animation-delay: 0.5s;">✨</div>
-            <div class="star" style="top: 8%; left: 45%; animation-delay: 1s;">⭐</div>
-            <div class="star" style="top: 20%; left: 65%; animation-delay: 1.5s;">✨</div>
-            <div class="star" style="top: 12%; left: 85%; animation-delay: 2s;">⭐</div>
-            <div class="star" style="top: 25%; left: 35%; animation-delay: 0.8s;">✨</div>
-            <div class="star" style="top: 18%; left: 75%; animation-delay: 1.2s;">⭐</div>
-            <div class="star" style="top: 5%; left: 55%; animation-delay: 0.3s;">✨</div>
-        </div>
+    <main class="container">
+        <section class="title-header">
+            <h1>HAPPY 4TH OF JULY!!!</h1>
+        </section>
 
-        <!-- Moon -->
-        <div class="moon"></div>
-
-        <!-- Fireworks -->
-        <div class="fireworks-container">
-            <div class="firework firework-1"></div>
-            <div class="firework firework-2"></div>
-            <div class="firework firework-3"></div>
-        </div>
-
-        <!-- Hot Air Balloon -->
-        <div class="balloon">
-            <div class="balloon-envelope"></div>
-            <div class="balloon-strings"></div>
-            <div class="balloon-basket"></div>
-        </div>
-
-        <!-- American Flag -->
-        <div class="flag-container" onclick="playNationalAnthem()">
-            <div class="flag-pole"></div>
-            <div class="flag"></div>
-        </div>
-
-        <!-- Interactive Sparkler -->
-        <div class="sparkler" onclick="activatePhotoMode()">
-            <div class="sparkler-stick"></div>
-            <div class="sparkler-tip"></div>
-            <div class="sparkler-sparks">
-                <div class="spark" style="top: 0; left: 0;"></div>
-                <div class="spark" style="top: 5px; left: 10px;"></div>
-                <div class="spark" style="top: -5px; left: 15px;"></div>
-                <div class="spark" style="top: 10px; left: 5px;"></div>
-                <div class="spark" style="top: -3px; left: -5px;"></div>
-            </div>
-        </div>
-
-        <!-- City Skyline -->
-        <div class="city-skyline"></div>
         
-        <!-- Building Lights -->
-        <div class="building-lights">
-            <div class="window window-1"></div>
-            <div class="window window-2"></div>
-            <div class="window window-3"></div>
-            <div class="window window-4"></div>
-            <div class="window window-5"></div>
-            <div class="window window-6"></div>
-            <div class="window window-7"></div>
-            <div class="window window-8"></div>
-            <div class="window window-9"></div>
-            <div class="window window-10"></div>
-            <div class="window window-11"></div>
-            <div class="window window-12"></div>
-            <div class="window window-13"></div>
-            <div class="window window-14"></div>
-            <div class="window window-15"></div>
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
         </div>
 
-        <!-- Parade -->
-        <div class="parade">
-            <div class="parade-float">
-                <div class="parade-wheels"></div>
-                <div class="parade-wheels"></div>
-            </div>
-        </div>
+        <div class="firework firework1"></div>
+        <div class="firework firework2"></div>
+        <div class="firework firework3"></div>
+        <div class="firework firework4"></div>
+        <div class="firework firework5"></div>
 
-        <!-- Ground -->
-        <div class="ground"></div>
+        <audio controls loop preload="auto" style="position: fixed; bottom: 10px; right: 10px; opacity: 0.8;">
+            <source src="images/music.mp3" type="audio/mpeg">
+        </audio>
 
-        <!-- Hidden Easter Egg -->
-        <div class="easter-egg" onclick="showEasterEgg()"></div>
-    </div>
+    </main>
 
-    <!-- Photo Booth Frame -->
-    <div class="photo-booth" id="photoBooth">
-        <button onclick="closePhotoMode()" style="position: absolute; top: 10px; right: 10px; background: var(--patriot-red); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer;">×</button>
-    </div>
-
-    <!-- Audio Control -->
-    <button class="audio-control" onclick="toggleAudio()" title="Play Patriotic Sounds">🎵</button>
-
-    <!-- Easter Egg Message -->
-    <div class="easter-egg-message" id="easterEggMessage">
-        <h3>🎆 Happy 4th of July! 🎆</h3>
-        <p>You found the secret celebration message!</p>
-        <p>May freedom ring across our great nation! 🇺🇸</p>
-        <button onclick="hideEasterEgg()" style="margin-top: 10px; background: var(--patriot-red); color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer;">Close</button>
-    </div>
-
-    <script>
-        // National Anthem Audio Simulation
-        function playNationalAnthem() {
-            alert("🎵 Playing: The Star-Spangled Banner 🇺🇸\n\n'O say can you see, by the dawn's early light...'");
-            
-            // Add visual feedback
-            const flag = document.querySelector('.flag');
-            flag.style.animation = 'flagWave 0.5s ease-in-out 5';
-        }
-
-        // Photo Booth Mode
-        function activatePhotoMode() {
-            const photoBooth = document.getElementById('photoBooth');
-            photoBooth.classList.add('active');
-        }
-
-        function closePhotoMode() {
-            const photoBooth = document.getElementById('photoBooth');
-            photoBooth.classList.remove('active');
-        }
-
-        // Audio Toggle
-        let audioPlaying = false;
-        function toggleAudio() {
-            const button = document.querySelector('.audio-control');
-            if (!audioPlaying) {
-                button.innerHTML = '🔊';
-                button.title = 'Audio Playing - Click to Stop';
-                alert("🎆 Patriotic sounds activated! 🎵\n\nImagine: Fireworks crackling, crowds cheering, and marching band music!");
-                audioPlaying = true;
-            } else {
-                button.innerHTML = '🎵';
-                button.title = 'Play Patriotic Sounds';
-                audioPlaying = false;
-            }
-        }
-
-        // Easter Egg Functions
-        function showEasterEgg() {
-            const message = document.getElementById('easterEggMessage');
-            message.classList.add('show');
-            
-            // Add extra fireworks
-            createBonusFireworks();
-        }
-
-        function hideEasterEgg() {
-            const message = document.getElementById('easterEggMessage');
-            message.classList.remove('show');
-        }
-
-        function createBonusFireworks() {
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => {
-                    const firework = document.createElement('div');
-                    firework.className = 'firework';
-                    firework.style.left = Math.random() * 100 + '%';
-                    firework.style.background = ['#FF0000', '#FFFFFF', '#002868'][Math.floor(Math.random() * 3)];
-                    document.querySelector('.fireworks-container').appendChild(firework);
-                    
-                    setTimeout(() => {
-                        firework.remove();
-                    }, 2000);
-                }, i * 300);
-            }
-        }
-
-        // Hover effect for fireworks
-        document.addEventListener('mousemove', function(e) {
-            if (Math.random() < 0.02) { // 2% chance on mouse move
-                const spark = document.createElement('div');
-                spark.style.position = 'fixed';
-                spark.style.left = e.clientX + 'px';
-                spark.style.top = e.clientY + 'px';
-                spark.style.width = '3px';
-                spark.style.height = '3px';
-                spark.style.background = '#FFD700';
-                spark.style.borderRadius = '50%';
-                spark.style.pointerEvents = 'none';
-                spark.style.zIndex = '1000';
-                spark.style.animation = 'sparkle 0.8s ease-out forwards';
-                document.body.appendChild(spark);
-                
-                setTimeout(() => {
-                    spark.remove();
-                }, 800);
-            }
-        });
-
-        // Add click-to-burst fireworks
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('sky') || e.target.classList.contains('stars')) {
-                createClickFirework(e.clientX, e.clientY);
-            }
-        });
-
-        function createClickFirework(x, y) {
-            const colors = ['#FF0000', '#FFFFFF', '#002868', '#FFD700'];
-            const firework = document.createElement('div');
-            firework.style.position = 'fixed';
-            firework.style.left = x + 'px';
-            firework.style.top = y + 'px';
-            firework.style.width = '10px';
-            firework.style.height = '10px';
-            firework.style.borderRadius = '50%';
-            firework.style.background = colors[Math.floor(Math.random() * colors.length)];
-            firework.style.pointerEvents = 'none';
-            firework.style.zIndex = '999';
-            firework.style.animation = 'fireworkBurst 1s ease-out forwards';
-            document.body.appendChild(firework);
-            
-            setTimeout(() => {
-                firework.remove();
-            }, 1000);
-        }
-
-        // Add CSS animation for click fireworks
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fireworkBurst {
-                0% {
-                    transform: scale(1);
-                    opacity: 1;
-                }
-                100% {
-                    transform: scale(20);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Welcome message
-        setTimeout(() => {
-            alert("🎆 Welcome to our 4th of July Celebration! 🇺🇸\n\n✨ Click the flag to play the national anthem\n🎇 Click the sparkler for photo booth mode\n🔍 Find the hidden easter egg!\n🎵 Use the music button for audio\n🎆 Click anywhere in the sky for fireworks!");
-        }, 1000);
-    </script>
 </body>
 </html>
